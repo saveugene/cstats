@@ -1,4 +1,3 @@
-.venv
 *-stats.csv
 *-stats.html
-__pycache__
+cstats
