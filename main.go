@@ -897,6 +897,7 @@ func usage() {
 Commands:
   plot    HTML/Plotly dashboard (one-shot or live server)
   term    Terminal UI dashboard
+  daemon  Collect container stats (docker or kubernetes)
 
 Run "cstats <command> -h" for command-specific flags.
 `)
@@ -912,6 +913,8 @@ func main() {
 		runPlot(os.Args[2:])
 	case "term":
 		runTerm(os.Args[2:])
+	case "daemon":
+		runDaemon(os.Args[2:])
 	default:
 		fmt.Fprintf(os.Stderr, "Unknown command: %s\n\n", os.Args[1])
 		usage()
